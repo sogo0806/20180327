@@ -27,11 +27,7 @@ public class Book {
         return publisher;
     }
     public void setisbn(String isbn1) {
-        if (isbn.length()==13){
-            this.isbn = isbn1;
-        }else {
-            this.isbn="error";
-        }
+        this.isbn=isbn1;
     }
     public String getIsbn() {
         return isbn;
@@ -45,5 +41,11 @@ public class Book {
     }
     public int getPrice() {
         return price;
+    }
+    public void showinfo(){
+        System.out.println(title);
+        System.out.println(author);
+        System.out.println(publisher);
+        System.out.println(price);
     }
 }

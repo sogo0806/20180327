@@ -12,25 +12,44 @@ public class Main {
         String publisher;
         String ibsn;
         int price;
-        boolean flag =true;
-        while (flag){
+        boolean flag = true;
+        while (flag) {
             int n = sca.nextInt();
-            switch (n){
+            switch (n) {
                 case 1:
                     System.out.println("書名:");
-                    title=sca.next();
+                    title = sca.next();
                     System.out.println("作者:");
-                    author=sca.next();
+                    author = sca.next();
                     System.out.println("出版:");
                     publisher = sca.next();
                     System.out.println("ISBN:");
                     ibsn = sca.next();
+                    if (ibsn.length()==13){
+                        ibsn = ibsn;
+                    }else {
+                        ibsn = "error";
+                    }
                     System.out.println("價錢:");
-                    price= sca.nextInt();
-                    book1.add(new Book(title,author,publisher,ibsn,price));
+                    price = sca.nextInt();
+                    Book book2 = new Book(title, author, publisher, ibsn, price);
+                    book1.add(book2);
                     break;
                 case 2:
-                    
+                    for (int i = 0; i < book1.size(); i++) {
+                        Book book3 =(Book) book1.get(i);
+                        if (book3.getTitle().equals(sca.next())) {
+                            book3.showinfo();
+                        }
+                    }
+                    break;
+                case 3:
+                    System.out.println(book1.size());
+                    break;
+                case 4:
+                    flag = false;
+                    break;
+
             }
         }
     }
